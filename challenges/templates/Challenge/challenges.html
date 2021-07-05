@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+   {% block page_title %}
+    {{head|title}} challenge
+   {% endblock  %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenge.css" %}">
+     <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+    {% include "./includes/header.html" %}
+
+    <h1>Yipeee Hello World is Here Man</h1>
+    <h2>welcome to {{head|title}} challenge!!!</h2>
+    <h2>What can I do for you</h2>
+    {%if value is not None%}  
+        <h2>{{value}}</h2>
+    {%else%}
+        <p class="fallback">This is something you cannot know</p>
+    {% endif %}
+
+{% endblock %}
